@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { PrivateConstants } from '../constants/privateConstants';
 import { SearchMovieResult } from '../models/movieSearchResults.interface';
+import { PrivateConstants } from '../constants/privateConstants';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +15,10 @@ export class TmdbService {
   private readonly searchMoviePath = 'search/movie';
 
 
-  constructor(private http: HttpClient,
-              private constants: PrivateConstants) { }
+  constructor(private http: HttpClient ) { }
 
   searchMovie(name: string): Observable<SearchMovieResult> {
-    const query = this.URL + this.searchMoviePath + '?' + 'api_key=' + this.constants.key + '&query=' + name;
+    const query = this.URL + this.searchMoviePath + '?' + 'api_key=' + PrivateConstants.key + '&query=' + name;
     return this.http.get(query).pipe(map((data: SearchMovieResult) => {
       return data;
     }), catchError( error => {
