@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchMovieResult } from '../models/movieSearchResults.interface';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  searchResults: SearchMovieResult;
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  getSearchResults(searchResult: SearchMovieResult) {
+    this.searchResults = searchResult;
   }
 
 }
