@@ -4,6 +4,7 @@ import { TmdbService } from '../services/tmdb.service';
 import { Output, EventEmitter } from '@angular/core';
 import { SearchMovieResult } from '../models/movieSearchResults.interface';
 
+
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
@@ -18,6 +19,7 @@ export class SearchFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private tmdbService: TmdbService
+
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,7 @@ export class SearchFormComponent implements OnInit {
   initSearchForm() {
     this.searchForm = this.fb.group({
       name: []
+
     }
     );
   }
@@ -39,6 +42,7 @@ export class SearchFormComponent implements OnInit {
 
   SearchResults(response: SearchMovieResult) {
     this.searchResults.emit(response);
+
   }
 
 }
