@@ -1,7 +1,10 @@
 <div>
-    <app-search-form (searchResults)="getSearchResults($event)"></app-search-form>
-</div>
-<div>
-    <app-search-results [searchResults] = "searchResults"></app-search-results>
 
+  <div>
+    <app-search-form (searchResults)="getSearchResults($event)"></app-search-form>
+  </div>
+  <div>
+    <app-search-results [searchResults]="searchResults"></app-search-results>
+
+  </div>
 </div>

@@ -1,4 +1,20 @@
-<ul>
-    <li *ngFor="let name of movieNames">{{name}}</li>
-</ul>
+<div class="search-results-container">
+    <div class="search-result-item-container" *ngFor="let movie of queryResults">
+        <div class="search-result-item-poster">
+            <img [src]="getImgSrc(movie.poster_path)" alt="">
+        </div>
+        <div class="search-result-item-info-container">
+            <div class="search-result-name">
+                <span>{{movie.title}}</span>
+            </div>
+            <div class="search-result-item-year">
+                <span>{{movie.release_date}}</span>
+            </div>
+            <div class="search-result-votes">
+                <span>{{movie.vote_average}}</span>
+            </div>
+        </div>
+    
+    </div>
+</div>
 

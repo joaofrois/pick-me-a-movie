@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TmdbService } from '../services/tmdb.service';
 import { Output, EventEmitter } from '@angular/core';
-import { SearchMovieResult } from '../models/movieSearchResults.interface';
+import { SearchMovieResult } from '../models/searchResults.interface';
 
 
 @Component({

@@ -1,4 +1,6 @@
-<form [formGroup]="searchForm" (ngSubmit)="searchSubmit()">
-    <input type="text" formControlName="name">
-    <button type="submit">Search</button>
-</form> 
+<div class="form-container">
+    <form [formGroup]="searchForm" (ngSubmit)="searchSubmit()">
+        <input type="text" formControlName="name">
+        <button class="form-button" type="submit">Search</button>
+    </form> 
+</div>

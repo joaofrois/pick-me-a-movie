@@ -1,6 +1,8 @@
 
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { SearchMovieResult } from '../models/movieSearchResults.interface';
+import { PublicConstants } from '../constants/publicConstants';
+import { MovieSearchResult } from '../models/movieSearchResult.interface';
+import { SearchMovieResult } from '../models/searchResults.interface';
 
 
 @Component({
@@ -13,8 +15,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
 
   @Input() searchResults: SearchMovieResult;
 
-  // temporario
-  movieNames = [];
+  queryResults: MovieSearchResult[] = [];
 
 
   constructor() { }
@@ -23,13 +24,17 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.movieNames = [];
+    this.queryResults = [];
     if (this.searchResults && this.searchResults.results) {
       this.searchResults.results.forEach(element => {
-        this.movieNames.push(element.title);
+        this.queryResults.push(element);
       });
     }
 
+  }
+
+  getImgSrc(posterPath: string) {
+    return PublicConstants.imgURL + posterPath;
   }
 
 }

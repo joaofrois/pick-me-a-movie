@@ -1,4 +1,4 @@
-interface Result {
+export interface MovieSearchResult {
     popularity: number;
     vote_count: number;
     video: boolean;
@@ -13,11 +13,4 @@ interface Result {
     vote_average: number;
     overview: string;
     release_date: string;
-}
-
-export interface SearchMovieResult {
-    page: number;
-    total_results: number;
-    total_pages: number;
-    results: Result[];
 }
